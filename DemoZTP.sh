@@ -67,7 +67,6 @@ if [[ $(hostname -s) = *tor* ]]; then
   echo "INTF_CMD="-i vlan100 -i swp49 -i swp50 -i swp51 -i swp52 -i swp53 -i swp54 -i swp55 -i swp56"" >> /etc/default/isc-dhcp-relay
 fi
 # CUMULUS-AUTOPROVISIONING
-exit 0
 # Waiting for NCLU to finish starting up
 last_code=1
 while [ "1" == "$last_code" ]; do
@@ -78,3 +77,4 @@ done
 net add time zone Etc/UTC
 net commit
 
+exit 0
