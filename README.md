@@ -1,5 +1,5 @@
 # DEMO_ZTP
-please offical doc first
+please see offical doc first
 https://docs.cumulusnetworks.com/display/DOCS/Zero+Touch+Provisioning+-+ZTP
 
 This ZTP file will works well on dhcp ztp.
