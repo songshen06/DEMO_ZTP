@@ -14,22 +14,22 @@ for i in `ls /sys/class/net -1 | grep swp`; do  ip link set up $i; done
 # Restart switchd for license to take effect
 sudo service switchd restart
 
-#三添加本地sankuai
+#三添加本地san
 cp /home/cumulus/.bashrc /etc/skel/ #new user will have bash complete
-groupadd sankuai 
-useradd sankuai -g sankuai -p `openssl passwd -1 P4ssw0rd` -s /bin/bash -d /home/sankuai
+groupadd san 
+useradd san -g san -p `openssl passwd -1 P4ssw0rd` -s /bin/bash -d /home/san
 # 密码 
 #用命令 echo "P4sSw0rD" | openssl passwd -1 -stdin
 #生成加密字符串“$1$Jxmpx1Da$Y8MzBctIyDW8/7pFPbNWD1”
 
-#sankuai sudo 不输入密码
+#san sudo 不输入密码
 
 # Enable passwordless sudo for cumulus user
 echo "cumulus ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/10_cumulus
-echo "sankuai ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/11_sankuai
+echo "san ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/11_san
 # 有 netshow 权限
-sed -i /etc/netd.conf -e 's/users_with_edit\ =\ root,\ cumulus/users_with_edit\ =\ root,\ cumulus,\ sankuai/g'
-sed -i /etc/netd.conf -e 's/users_with_show =\ root,\ cumulus/users_with_show\ =\ root,\ cumulus,\ sankuai/g'
+sed -i /etc/netd.conf -e 's/users_with_edit\ =\ root,\ cumulus/users_with_edit\ =\ root,\ cumulus,\ san/g'
+sed -i /etc/netd.conf -e 's/users_with_show =\ root,\ cumulus/users_with_show\ =\ root,\ cumulus,\ san/g'
 systemctl restart netd.service  
 #四 管理 
 
