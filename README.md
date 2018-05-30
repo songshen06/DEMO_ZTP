@@ -12,9 +12,9 @@ create group before create user
 new user will not have bash completion , pleas create a .bashrc file
 
 ## DHCP part 
-DHCP server can do a lot 
-assig IP ,hostname 
-point the ztp script link 
-onie link 
+DHCP server can do a lot of work 
+assign IP ,hostname 
+point the ztp script link ,onie link
+ 
 "./dhcp_gen list" to generate dhcpd.hosts file for isc-dhcp-server
 
