@@ -16,21 +16,5 @@ DHCP server can do a lot
 assig IP ,hostname 
 point the ztp script link 
 onie link 
-shen@ubuntu:/etc/dhcp$ tree
-.
-├── ddns-keys [error opening dir]
-├── debug
-├── dhclient.conf
-├── dhclient-enter-hooks.d
-│   ├── debug -> ../debug
-│   └── resolvconf
-├── dhclient-exit-hooks.d
-│   ├── debug -> ../debug
-│   ├── rfc3442-classless-routes
-│   └── timesyncd
-├── dhcp_client
-├── dhcpd.conf
-├── dhcpd.hosts
-└── dhcpd.pools
-
+"./dhcp_gen list" to generate dhcpd.hosts file for isc-dhcp-server
 
